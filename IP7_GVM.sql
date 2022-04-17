@@ -1,0 +1,15 @@
+use premier_products;
+select * from customer, sales_rep, part, order_line;
+select last_name,first_name,sales_rep_num,city from sales_rep;
+select order_num, customer_num from orders;
+select * from order_line limit 2;
+select * from customer where sales_rep_num=20;
+select customer_name,balance,credit_limit from customer where sales_rep_num=20;
+select part_num,num_ordered,quoted_price, num_ordered*quoted_price as total_price from order_line where order_num=21617;
+select * from orders where 2010-10-20<order_date<2010-10-22;
+select * from part where part_description like "D%" "%er";
+select customer_name,balance from customer;
+select customer_name, min(balance) from customer;
+select count(customer_name) from customer;
+select order_num from order_line where 1000>quoted_price>500;
+select customer_name,last_name,first_name from customer,sales_rep where sales_rep.sales_rep_num=customer.sales_rep_num;
